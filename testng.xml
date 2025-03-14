@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite parallel="tests" name="Suite">
-  <test> name="TestConfig">
-	  <parameter name= "property" value = "config.properties"/>>
+  <test name="TestConfig">
+	  <parameter name= "property" value = "config.properties"/>
+    <packages>
+      <package name="script"/>
+    </packages>
+  </test> 
+  <test name="qa">
+	  <parameter name= "property" value = "qa.properties"/>>
     <packages>
       <package name="script"/>
     </packages>
