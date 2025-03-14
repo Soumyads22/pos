@@ -6,6 +6,5 @@
     <packages>
       <package name="script"/>
     </packages>
-  </test>
-   
+  </test> 
 </suite> <!-- Suite -->
