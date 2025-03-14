@@ -9,30 +9,37 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 
-public class HomePage 
+public class HomePage
 
 {
-@FindBy(xpath="//h3[starts-with(text(), 'Welcome to OSPOS')]")
-private WebElement welcomeMessage;
-
-public HomePage(WebDriver driver)
-{
-	PageFactory.initElements(driver, this);
-}
-
-public boolean verifyHomePageIsDisplayed(WebDriverWait wait)
-{
-	try
-	{
-		wait.until(ExpectedConditions.visibilityOf(welcomeMessage));
-		Reporter.log("home page is displayed, true");
-		return true;
-	}
-    catch (Exception e)
-	{
-    	Reporter.log("home page is  not displayed, true");
-    	return false;
-	}
+	@FindBy(xpath = "//h3[starts-with(text(), 'Welcome to OSPOS,')]")
+	private WebElement welcomeMessage;
 	
-}
+	@FindBy(xpath= "//a[text()= 'Logout']")
+	private WebElement logoutBTN;
+
+	public HomePage(WebDriver driver) {
+		PageFactory.initElements(driver, this);
+	}
+
+//	public boolean verifyHomePageIsDisplayed(WebDriverWait wait) {
+//		try {
+//			wait.until(ExpectedConditions.visibilityOf(welcomeMessage));
+//			Reporter.log("home page is displayed, true");
+//			return true;
+//		} catch (Exception e) {
+//			Reporter.log("home page is  not displayed, true");
+//			return false;
+//		}
+
+		public boolean verifyHomePageIsDisplayed(WebDriverWait wait) {
+			try {
+				wait.until(ExpectedConditions.visibilityOf(logoutBTN));
+				Reporter.log("home page is displayed, true");
+				return true;
+			} catch (Exception e) {
+				Reporter.log("home page is  not displayed, true");
+				return false;
+			}
+	}
 }

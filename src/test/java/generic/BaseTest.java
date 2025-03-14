@@ -41,7 +41,9 @@ public class BaseTest {
 	public WebDriver driver;
 	public WebDriverWait wait;
 	public ExtentTest test;
-	public static final String XL_PATH= "./data/Book1.xlsx";
+	public static final String XL_PATH= "./data/input.xlsx";
+	
+	
 	
 	
 	@BeforeSuite
@@ -72,6 +74,7 @@ public class BaseTest {
 		String appURL =Utility.getProperty(property, "APP_URL");
 		String ITO = Utility.getProperty(property, "ITO");
 		String ETO = Utility.getProperty(property, "ETO");
+	
 		
 		if(grid.equalsIgnoreCase("yes"))
 		{
